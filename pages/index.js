@@ -1,5 +1,11 @@
-import styles from "@/styles/Home.module.css";
+import FeaturedPosts from "@/components/home-page/featured-posts/featured-posts";
+import Hero from "@/components/home-page/hero/hero";
 
 export default function HomePage() {
-  return <></>;
+  return (
+    <>
+      <Hero />
+      <FeaturedPosts />
+    </>
+  );
 }
