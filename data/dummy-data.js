@@ -2,7 +2,7 @@ export const DUMMY_POSTS = [
   {
     slug: "getting-started-with-nextjs",
     title: "Getting Started with Next.js",
-    image: "nextjs-intro.jpg",
+    image: "next-js.avif",
     date: "2024-09-01",
     excerpt:
       "An introductory guide to help you get started with Next.js, a powerful React framework for building fast, server-rendered applications.",
@@ -10,7 +10,7 @@ export const DUMMY_POSTS = [
   {
     slug: "learning-react-hooks",
     title: "Learning React Hooks",
-    image: "react-hooks.jpg",
+    image: "react-hooks.avif",
     date: "2024-08-15",
     excerpt:
       "Discover how to effectively use React Hooks to manage state and side effects in your React components.",
@@ -18,7 +18,7 @@ export const DUMMY_POSTS = [
   {
     slug: "advanced-css-techniques",
     title: "Advanced CSS Techniques",
-    image: "css-techniques.jpg",
+    image: "css.avif",
     date: "2024-07-30",
     excerpt:
       "Explore advanced CSS techniques to create responsive and modern web designs.",
@@ -26,7 +26,7 @@ export const DUMMY_POSTS = [
   {
     slug: "mastering-javascript",
     title: "Mastering JavaScript",
-    image: "js-mastery.jpg",
+    image: "javascript.avif",
     date: "2024-08-20",
     excerpt:
       "A comprehensive guide to mastering JavaScript, from basic syntax to advanced concepts.",
@@ -34,7 +34,7 @@ export const DUMMY_POSTS = [
   {
     slug: "web-performance-optimization",
     title: "Web Performance Optimization",
-    image: "web-performance.jpg",
+    image: "web-performance.avif",
     date: "2024-08-05",
     excerpt:
       "Learn how to optimize your website's performance for better user experience and SEO ranking.",
@@ -42,7 +42,7 @@ export const DUMMY_POSTS = [
   {
     slug: "understanding-react-router",
     title: "Understanding React Router",
-    image: "react-router.jpg",
+    image: "react-router.avif",
     date: "2024-07-25",
     excerpt:
       "Get a deep dive into React Router to manage navigation in your React applications.",
@@ -50,7 +50,7 @@ export const DUMMY_POSTS = [
   {
     slug: "building-apis-with-nodejs",
     title: "Building APIs with Node.js",
-    image: "nodejs-apis.jpg",
+    image: "api.avif",
     date: "2024-09-10",
     excerpt:
       "An in-depth guide to building scalable and robust APIs using Node.js and Express.",
@@ -58,7 +58,7 @@ export const DUMMY_POSTS = [
   {
     slug: "exploring-graphql",
     title: "Exploring GraphQL",
-    image: "graphql.jpg",
+    image: "graph-ql.avif",
     date: "2024-08-22",
     excerpt:
       "Understand the fundamentals of GraphQL and how to integrate it into your web applications.",
@@ -66,7 +66,7 @@ export const DUMMY_POSTS = [
   {
     slug: "tailwind-css-basics",
     title: "Tailwind CSS Basics",
-    image: "tailwind-basics.jpg",
+    image: "tailwind-css.avif",
     date: "2024-09-05",
     excerpt:
       "Learn how to use Tailwind CSS for building fast and responsive user interfaces.",
@@ -74,7 +74,7 @@ export const DUMMY_POSTS = [
   {
     slug: "state-management-with-redux",
     title: "State Management with Redux",
-    image: "redux.jpg",
+    image: "redux.avif",
     date: "2024-09-12",
     excerpt:
       "Discover how to manage state efficiently in React applications using Redux.",
