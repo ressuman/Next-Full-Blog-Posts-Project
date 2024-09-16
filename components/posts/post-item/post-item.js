@@ -3,17 +3,19 @@ import classes from "./post-item.module.css";
 import Image from "next/image";
 import { formattedDate } from "@/utils/date";
 import { imagePath } from "@/utils/image";
+import { linkPath } from "@/utils/link";
 
 export default function PostItem({ title, image, excerpt, date, slug }) {
   return (
     <li className={classes.post}>
-      <Link href={`/posts/${slug}`}>
+      <Link href={linkPath(slug)}>
         <div className={classes.image}>
           <Image
             src={imagePath(slug, image)}
             width={300}
             height={200}
             alt={title}
+            layout="responsive"
           />
         </div>
 
