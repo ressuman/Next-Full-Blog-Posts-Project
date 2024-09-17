@@ -2,6 +2,7 @@ import { imagePath } from "@/utils/image";
 import PostHeader from "../post-header/post-header";
 import classes from "./post-content.module.css";
 import { DUMMY_POSTS } from "@/data/model-data";
+import ReactMarkdown from "react-markdown";
 
 export default function PostContent() {
   const data = DUMMY_POSTS;
@@ -10,10 +11,7 @@ export default function PostContent() {
   return (
     <article className={classes.content}>
       <PostHeader title={data.title} image={image} />
-      <div>
-        <h1>{data.title}</h1>
-        <p>{data.content}</p>
-      </div>
+      <ReactMarkdown>{data.content}</ReactMarkdown>
     </article>
   );
 }
