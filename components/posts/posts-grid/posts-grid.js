@@ -12,6 +12,7 @@ export default function PostsGrid({ posts }) {
           excerpt={post.excerpt}
           date={post.date}
           slug={post.slug}
+          author={post.author}
         />
       ))}
     </ul>

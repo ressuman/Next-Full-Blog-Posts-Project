@@ -5,7 +5,14 @@ import { formattedDate } from "@/utils/date";
 import { imagePath } from "@/utils/image";
 import { linkPath } from "@/utils/link";
 
-export default function PostItem({ title, image, excerpt, date, slug }) {
+export default function PostItem({
+  title,
+  image,
+  excerpt,
+  date,
+  slug,
+  author,
+}) {
   return (
     <li className={classes.post}>
       <Link href={linkPath(slug)}>
@@ -23,6 +30,7 @@ export default function PostItem({ title, image, excerpt, date, slug }) {
           <h3>{title}</h3>
           <time>{formattedDate(date)}</time>
           <p>{excerpt}</p>
+          <p>By- {author}</p>
         </div>
       </Link>
     </li>
