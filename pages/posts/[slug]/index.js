@@ -2,8 +2,8 @@ import PostContent from "@/components/posts/post-detail/post-content/post-conten
 import { getPostData } from "@/utils/post-data";
 import { getPostsFiles } from "@/utils/posts-files";
 
-export default function PostsDetailsPage() {
-  return <PostContent />;
+export default function PostsDetailsPage({ post }) {
+  return <PostContent post={post} />;
 }
 
 export async function getStaticProps(ctx) {
