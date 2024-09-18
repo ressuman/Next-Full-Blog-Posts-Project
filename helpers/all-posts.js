@@ -1,9 +1,9 @@
 import fs from "fs";
 import { getPostData } from "@/utils/post-data";
-import { postDirectory } from "@/utils/posts-directory";
+import { getPostsFiles } from "@/utils/posts-files";
 
 export function getAllPosts() {
-  const postFiles = fs.readdirSync(postDirectory);
+  const postFiles = getPostsFiles();
 
   const allPosts = postFiles.map((postFile) => {
     return getPostData(postFile);
