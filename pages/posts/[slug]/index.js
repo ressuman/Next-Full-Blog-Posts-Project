@@ -1,5 +1,6 @@
 import PostContent from "@/components/posts/post-detail/post-content/post-content";
 import { getPostData } from "@/utils/post-data";
+import { getPostsFiles } from "@/utils/posts-files";
 
 export default function PostsDetailsPage() {
   return <PostContent />;
@@ -24,8 +25,20 @@ export async function getStaticProps(ctx) {
 }
 
 export async function getStaticPaths() {
+  const postFileNames = getPostsFiles();
+
+  const slugs = postFileNames.map((postFileName) =>
+    postFileName.replace(/\.md$/, "")
+  );
+
+  const slugPath = slugs.map((slug) => ({
+    params: {
+      slug,
+    },
+  }));
+
   return {
-    paths: [],
+    paths: slugPath,
     fallback: false,
   };
 }
