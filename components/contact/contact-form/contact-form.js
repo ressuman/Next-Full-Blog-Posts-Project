@@ -1,7 +1,7 @@
 //import { sendMessageHandler } from "@/helpers/contact/send-message";
 import { validateForm } from "@/helpers/contact/validate-form";
 import classes from "./contact-form.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sendMessage } from "@/helpers/contact/send-message";
 import Notification from "../ui/notification";
 
@@ -129,6 +129,23 @@ export default function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [requestStatus, setRequestStatus] = useState();
 
+  useEffect(() => {
+    if (
+      requestStatus === "success" ||
+      requestStatus === "error" ||
+      success ||
+      error
+    ) {
+      const timer = setTimeout(() => {
+        setRequestStatus(null);
+        setSuccess(null);
+        setError(null);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [requestStatus, success, error]);
+
   async function sendMessageHandler(event) {
     event.preventDefault();
 
@@ -210,7 +227,7 @@ export default function ContactForm() {
             />
           </div>
           <div className={classes.control}>
-            <label htmlFor="name">Your FullName</label>
+            <label htmlFor="name">Your Full Name</label>
             <input
               type="text"
               name="name"
