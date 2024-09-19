@@ -1,4 +1,3 @@
-import fs from "fs";
 import { getPostData } from "@/utils/post-data";
 import { getPostsFiles } from "@/utils/posts-files";
 

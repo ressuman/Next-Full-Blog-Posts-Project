@@ -1,6 +1,6 @@
 import FeaturedPosts from "@/components/home-page/featured-posts/featured-posts";
 import Hero from "@/components/home-page/hero/hero";
-import { getFeaturedPosts } from "@/helpers/featured-posts";
+import { getFeaturedPosts } from "@/helpers/posts/featured-posts";
 
 export default function HomePage({ posts }) {
   return (

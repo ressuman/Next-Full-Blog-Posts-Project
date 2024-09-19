@@ -25,6 +25,8 @@ export default function handler(req, res) {
       date: new Date(),
     };
 
+    console.log(newMessage);
+
     res.status(201).json({
       message: "Successfully stored message!.",
       message: newMessage,

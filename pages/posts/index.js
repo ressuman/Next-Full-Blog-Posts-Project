@@ -1,5 +1,5 @@
 import AllPosts from "@/components/posts/all-posts/all-posts";
-import { getAllPosts } from "@/helpers/all-posts";
+import { getAllPosts } from "@/helpers/posts/all-posts";
 
 export default function AllPostsPage({ posts }) {
   return <AllPosts posts={posts} />;
