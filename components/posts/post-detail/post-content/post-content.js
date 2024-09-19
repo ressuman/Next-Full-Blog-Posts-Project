@@ -4,19 +4,8 @@ import classes from "./post-content.module.css";
 import ReactMarkdown from "react-markdown";
 import { markdownCustomRenderers } from "@/utils/markdown-renderers";
 import Image from "next/image";
-
-//     // code(code) {
-//     //   const { className, children } = code;
-//     //   const language = className.split("-")[1];
-//     //   return (
-//     //     <SyntaxHighlighter
-//     //       style={atomDark}
-//     //       language={language}
-//     //       children={children}
-//     //     />
-//     //   );
-//     // },
-//   };
+//import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+//import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // export default function PostContent({ post }) {
 //   const image = imagePath(post.slug, post.image);
@@ -62,6 +51,15 @@ import Image from "next/image";
 //       // Render the paragraph normally if it doesn't contain an image
 //       return <p>{children}</p>;
 //     },
+//     // code(code) {
+//     //   const { className, children } = code;
+//     //   const language = className ? className.split("-")[1] : null;
+//     //   return (
+//     //     <SyntaxHighlighter style={atomDark} language={language}>
+//     //       {children}
+//     //     </SyntaxHighlighter>
+//     //   );
+//     // },
 //   };
 
 //   return (
