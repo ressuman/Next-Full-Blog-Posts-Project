@@ -1,20 +1,41 @@
 import Image from "next/image";
 import { imagePathMarkdown } from "./image";
 
-// export const markdownCustomRenderers = {
-//   img(image) {
-//     const imageUrl = imagePathMarkdown(post.slug, image.src);
+export const markdownCustomRenderers = (slug, classes) => ({
+  // img: ({ src, alt }) => {
+  //   // Ensure src is only the filename
+  //   const imageUrl = imagePathMarkdown(slug, src.replace(/.*\/([^/]+)$/, "$1"));
+  //   //console.log(`Image URL: ${imageUrl}`); // Debug output
 
-//     return <Image src={imageUrl} width={600} height={300} alt={image.alt} />;
-//   },
-// };
+  //   return <Image src={imageUrl} width={600} height={500} alt={alt} />;
+  // },
+  p(paragraph) {
+    const { node, children } = paragraph;
 
-export const markdownCustomRenderers = (slug) => ({
-  img: ({ src, alt }) => {
-    // Ensure src is only the filename
-    const imageUrl = imagePathMarkdown(slug, src.replace(/.*\/([^/]+)$/, "$1"));
-    //console.log(`Image URL: ${imageUrl}`); // Debug output
+    // Check if the paragraph contains only an image
+    if (
+      node.children &&
+      node.children[0] &&
+      node.children[0].tagName === "img"
+    ) {
+      const image = node.children[0];
 
-    return <Image src={imageUrl} width={890} height={700} alt={alt} />;
+      // Use the imported imagePathMarkdown function to generate the URL
+      const imageUrl = imagePathMarkdown(slug, image.properties.src);
+
+      return (
+        <div className={classes.image}>
+          <Image
+            src={imageUrl}
+            width={600}
+            height={500}
+            alt={image.properties.alt || "Post Image"}
+          />
+        </div>
+      );
+    }
+
+    // Render the paragraph normally if it doesn't contain an image
+    return <p>{children}</p>;
   },
 });
