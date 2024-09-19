@@ -3,6 +3,7 @@ import { validateForm } from "@/helpers/contact/validate-form";
 import classes from "./contact-form.module.css";
 import { useState } from "react";
 import { sendMessage } from "@/helpers/contact/send-message";
+import Notification from "../ui/notification";
 
 // export default function ContactForm() {
 //   const [enteredEmail, setEnteredEmail] = useState("");
@@ -126,6 +127,7 @@ export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const [requestStatus, setRequestStatus] = useState();
 
   async function sendMessageHandler(event) {
     event.preventDefault();
@@ -133,6 +135,7 @@ export default function ContactForm() {
     setSuccess(false);
     setError(null);
     setIsLoading(true);
+    setRequestStatus("pending");
 
     const validationResult = validateForm({
       enteredEmail,
@@ -142,6 +145,7 @@ export default function ContactForm() {
 
     if (!validationResult.isValid) {
       setError(validationResult.message);
+      setRequestStatus("error");
       setIsLoading(false);
       return;
     }
@@ -149,15 +153,43 @@ export default function ContactForm() {
     try {
       await sendMessage({ enteredEmail, enteredFullName, enteredMessage });
       setSuccess("Message sent successfully!");
+      setRequestStatus("success");
 
       setEnteredEmail("");
       setEnteredFullName("");
       setEnteredMessage("");
     } catch (error) {
       setError(error.message);
+      setRequestStatus("error");
     } finally {
       setIsLoading(false);
     }
+  }
+
+  let notification;
+
+  if (requestStatus === "pending") {
+    notification = {
+      status: "pending",
+      title: "Sending...",
+      message: "Your message is on its way!",
+    };
+  }
+
+  if (requestStatus === "success") {
+    notification = {
+      status: "success",
+      title: "Success!",
+      message: "Message sent successfully!",
+    };
+  }
+
+  if (requestStatus === "error") {
+    notification = {
+      status: "error",
+      title: "Error!",
+      message: error,
+    };
   }
 
   return (
@@ -211,6 +243,13 @@ export default function ContactForm() {
           <p className={classes.success}>Message sent successfully!</p>
         )}
       </form>
+      {notification && (
+        <Notification
+          status={notification.status}
+          title={notification.title}
+          message={notification.message}
+        />
+      )}
     </section>
   );
 }
