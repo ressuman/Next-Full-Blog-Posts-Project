@@ -160,6 +160,14 @@ This project is licensed under the MIT License.
 
 ---
 
+## Gif
+
+Here is an expected gif of the preview of the App(Blog Posts App)
+
+## ![Blog Posts App gif](./public/next-blog-posts.gif)
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
