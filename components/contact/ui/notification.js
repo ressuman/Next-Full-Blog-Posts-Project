@@ -1,5 +1,6 @@
 import reactDom from "react-dom";
 import classes from "./notification.module.css";
+import PropTypes from "prop-types";
 
 export default function Notification({ title, message, status }) {
   let statusClasses = "";
@@ -22,3 +23,9 @@ export default function Notification({ title, message, status }) {
     document.getElementById("notifications")
   );
 }
+
+Notification.propTypes = {
+  status: PropTypes.oneOf(["success", "error", "pending"]).isRequired,
+  title: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+};

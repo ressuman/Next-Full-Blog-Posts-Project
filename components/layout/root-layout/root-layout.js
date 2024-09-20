@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import MainNavigation from "../main-navigation/main-navigation";
 
 export default function RootLayout({ children }) {
@@ -8,3 +9,7 @@ export default function RootLayout({ children }) {
     </>
   );
 }
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};

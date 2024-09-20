@@ -1,5 +1,6 @@
 import Image from "next/image";
 import classes from "./post-header.module.css";
+import PropTypes from "prop-types";
 
 export default function PostHeader({ title, image }) {
   return (
@@ -9,3 +10,8 @@ export default function PostHeader({ title, image }) {
     </header>
   );
 }
+
+PostHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};

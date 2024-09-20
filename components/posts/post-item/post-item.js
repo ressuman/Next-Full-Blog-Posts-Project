@@ -4,6 +4,7 @@ import Image from "next/image";
 import { formattedDate } from "@/utils/date";
 import { imagePath } from "@/utils/image";
 import { linkPath } from "@/utils/link";
+import PropTypes from "prop-types";
 
 export default function PostItem({
   title,
@@ -36,3 +37,12 @@ export default function PostItem({
     </li>
   );
 }
+
+PostItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};

@@ -2,6 +2,7 @@ import PostContent from "@/components/posts/post-detail/post-content/post-conten
 import { getPostData } from "@/utils/post-data";
 import { getPostsFiles } from "@/utils/posts-files";
 import Head from "next/head";
+import PropTypes from "prop-types";
 
 export default function PostsDetailsPage({ post }) {
   return (
@@ -14,6 +15,18 @@ export default function PostsDetailsPage({ post }) {
     </>
   );
 }
+
+PostsDetailsPage.propTypes = {
+  post: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    excerpt: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export async function getStaticProps(ctx) {
   //const { params } = ctx;

@@ -9,7 +9,7 @@ export default function Hero() {
           src="/images/site/hero-image.avif"
           width={300}
           height={300}
-          alt="An image showing Richard"
+          alt="An image showing the author"
         />
       </div>
       <h1>Hi, I&apos;m Richard- A Web Developer and Tech Enthusiast</h1>
