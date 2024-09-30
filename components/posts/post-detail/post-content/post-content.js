@@ -7,7 +7,11 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 
 //import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-//import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+//import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
+//import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+//import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
+// SyntaxHighlighter.registerLanguage("js",js)
+// SyntaxHighlighter.registerLanguage("css",css)
 
 // export default function PostContent({ post }) {
 //   const image = imagePath(post.slug, post.image);
